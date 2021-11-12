@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+#container{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 ul{
     margin: 20px 20px 0;
 }
@@ -30,4 +34,17 @@ ul{
 
 .done-line{
     text-decoration: line-through;
+}
+
+.empty-tasks{
+    margin: 20px 20px 0;
+    filter: opacity(0.5);
+}
+
+.date{
+    color: grey;
+    font-size: 0.9em;
+}
+.date span{
+    margin: 0 10px;
 }

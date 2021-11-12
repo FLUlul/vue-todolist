@@ -12,7 +12,7 @@
     <div id="container">
         <div id="input-container">
 
-            <input type="text" placeholder="Add a new task" v-model ="newTask.text">
+            <input type="text" placeholder="Add a new task" v-model ="newTask.text" @keydown.enter="addNewTask">
 
             <button @click="addNewTask">
                 Add
@@ -20,11 +20,15 @@
 
         </div>
 
-        <ul>
+        <div class="empty-tasks" v-if="tasks.length === 0">
+            Add new tasks, no tasks to do.
+        </div>
 
-            <li v-for="task, i in tasks" :key="i" :class="task.done === true ? 'done-line' : ''">
+        <ul v-else>
 
-                {{task.text}}
+            <li v-for="task, i in tasks" :key="i">
+
+                <span :class="task.done === true ? 'done-line' : ''">{{task.text}}</span>
 
                 <span id="delete" @click="deleteTask(i)">
                     &#10005;
@@ -33,6 +37,15 @@
                 <span id="done" @click="doneTask(i)">
                     &#10003;
                 </span>
+
+                <div class="date">
+                    <span>
+                        {{ task.date }}
+                    </span>
+                    <span>
+                        {{ task.time }}
+                    </span>
+                </div>
             </li>
 
         </ul>

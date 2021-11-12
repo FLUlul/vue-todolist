@@ -34,7 +34,9 @@ var app = new Vue (
                     done: false
                 },
                 {
-                    text: 'Guardare torneo di Dota2', 
+                    text: 'Guardare torneo di Dota2',
+                    date: "12/11/21",
+                    time: "11:30",
                     done: false
                 },
                 {
@@ -53,13 +55,13 @@ var app = new Vue (
             },
             addNewTask(){
                 this.tasks.push(this.newTask);
-                this.newTask = {
+                this.newTask = {    
                     text: "", 
                     done: false
                 };
             },
             doneTask(index){
-                this.tasks[index].done=true;
+                this.tasks[index].done = true;
             }
         }
     }
