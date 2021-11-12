@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vue Todo List</title>
+</head>
+<body>
+    <div id="container">
+        <div id="input-container">
+
+            <input type="text" placeholder="Add a new task" v-model ="newTask.text">
+
+            <button @click="addNewTask">
+                Add
+            </button>
+
+        </div>
+
+        <ul>
+
+            <li v-for="task, i in tasks" :key="i" :class="task.done === true ? 'done-line' : ''">
+
+                {{task.text}}
+
+                <span id="delete" @click="deleteTask(i)">
+                    &#10005;
+                </span>
+
+                <span id="done" @click="doneTask(i)">
+                    &#10003;
+                </span>
+            </li>
+
+        </ul>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

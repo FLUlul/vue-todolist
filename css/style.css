@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    margin: 20px 20px 0;
+}
+
+#delete{
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    color: red;
+    margin-left: 10px;
+}
+
+#done{
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    color: green;
+    margin-left: 10px;
+}
+
+#input-container{
+    margin: 20px 20px 0;
+}
+
+.done-line{
+    text-decoration: line-through;
+}
